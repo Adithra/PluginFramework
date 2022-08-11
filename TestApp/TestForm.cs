@@ -19,15 +19,21 @@ namespace TestApp
             InitializeComponent();
         }
 
+        //In this method commented lines demostare how to call multiple plugings. commented due to no actual funtion for thoes plugins only resize has coded function.
         private void Form1_Load(object sender, EventArgs e)
         {
             Test test = new Test();
-            pictureBox1.Image = test.Byte_Array_To_Image(File.ReadAllBytes(@"../../Test/Test.txt"));
+            pictureBox1.Image =  pictureBox3.Image = test.Byte_Array_To_Image(File.ReadAllBytes(@"../../Test/Test.txt"));
 
-            //foreach (var plugin in test.Test_API())
-            //{
-                pictureBox2.Image = test.Test_API()[0].Image;
-            //}
+            pictureBox2.Image = test.Test_API(pictureBox1.Image)[0].Image;
+            //pictureBox2.Image = test.Test_API(pictureBox1.Image)[1].Image;          
+
+            var imageLists = test.Test_API_MI(new List<Image> { pictureBox1.Image, pictureBox3.Image });
+            pictureBox2.Image = imageLists[0][0].Image;
+            //pictureBox2.Image = imageLists[0][1].Image;
+            pictureBox4.Image = imageLists[1][0].Image;
+            //pictureBox4.Image = imageLists[1][1].Image;
+
         }
 
     }
