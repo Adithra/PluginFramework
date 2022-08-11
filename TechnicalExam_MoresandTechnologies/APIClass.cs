@@ -46,6 +46,7 @@ namespace TechnicalExam_MoresandTechnologies
                 return false;
             }
         }
+
         #region External Usage
         /// <summary>
         /// Method <c>Get_Active_Plugins</c> can use to get active plugins list.
