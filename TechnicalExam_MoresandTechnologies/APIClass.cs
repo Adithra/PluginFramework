@@ -15,11 +15,11 @@ namespace TechnicalExam_MoresandTechnologies
     /// To apply plugins setting to images need to pass list of plugin to constructor
     /// </para>
     /// </summary>
-    public class Class1
+    public class APIClass
     {
         List<Plugin> _plugins;
 
-        public Class1(List<Plugin> plugins = null)
+        public APIClass(List<Plugin> plugins = null)
         {
             _plugins = plugins;
         }

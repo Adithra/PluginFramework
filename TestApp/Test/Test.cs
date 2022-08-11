@@ -23,7 +23,7 @@ namespace TestApp
         {
             try
             {
-                Class1 classObj = new Class1(new List<Plugin> {
+                APIClass classObj = new APIClass(new List<Plugin> {
                     new Plugin {
                         Image = Byte_Array_To_Image(File.ReadAllBytes(@"../../Test/Test.txt")),
                         PluginType=PluginTypes.Resize,
