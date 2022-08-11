@@ -114,6 +114,6 @@ namespace TechnicalExam_MoresandTechnologies
             }
             return _plugins;
         }
+        #endregion
     }
-    #endregion
 }
