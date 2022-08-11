@@ -91,7 +91,7 @@ namespace TechnicalExam_MoresandTechnologies
                             else if (plugin.PluginType == PluginTypes.Resize)
                             {
                                 //Eg:
-                                Bitmap b = new Bitmap(plugin.Image.Width * 2, plugin.Image.Height * 2);
+                                Bitmap b = new Bitmap(plugin.Image.Width / 6, plugin.Image.Height / 6);
                                 Graphics g = Graphics.FromImage((System.Drawing.Image)b);
                                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                                 g.DrawImage(plugin.Image, 0, 0, plugin.Image.Width, plugin.Image.Height);
