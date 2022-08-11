@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -39,8 +40,9 @@ namespace TechnicalExam_MoresandTechnologies
                     return false;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                EventLog.WriteEntry(ex.Message, "Error in Plugin Handler", EventLogEntryType.Error);
                 return false;
             }
         }
@@ -108,9 +110,9 @@ namespace TechnicalExam_MoresandTechnologies
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                EventLog.WriteEntry(ex.Message,"Error in Plugin Handler",EventLogEntryType.Error);
             }
             return _plugins;
         }

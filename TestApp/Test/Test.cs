@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -34,9 +35,10 @@ namespace TestApp
                     }});
                 return classObj.PluginHandler();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return  null;
+                EventLog.WriteEntry(ex.Message, "Error in Plugin Handler", EventLogEntryType.Error);
+                return null;
             }
         }
     }
